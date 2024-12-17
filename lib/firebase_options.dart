@@ -65,4 +65,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'final-wmp-3f64f.firebasestorage.app',
     iosBundleId: 'com.example.finalExamProject',
   );
+
 }
