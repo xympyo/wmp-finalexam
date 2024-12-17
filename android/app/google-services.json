@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "249912932122",
+    "project_id": "final-wmp-3f64f",
+    "storage_bucket": "final-wmp-3f64f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249912932122:android:b9d7dac004323141289ea3",
+        "android_client_info": {
+          "package_name": "com.finalexam.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaVxK9-OHD2hqpaDHqMlxVW_EZ0wa49ZE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
