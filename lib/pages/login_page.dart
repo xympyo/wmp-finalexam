@@ -29,6 +29,7 @@ class LoginPage extends StatelessWidget {
           errorMsg = "User is not found!";
         } else if (e.code == 'wrong-password') {
           errorMsg = "Wrong password!";
+          print(errorMsg);
         }
       }
     }
@@ -65,6 +66,7 @@ class LoginPage extends StatelessWidget {
 
     Widget passwordInput() {
       return TextField(
+        obscureText: true,
         controller: passwordController,
         decoration: InputDecoration(
           labelText: "Your password",
@@ -96,112 +98,112 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: kWhiteColor,
       body: Center(
-        child: Column(
-          children: [
-            Container(
-              width: 216,
-              height: 216,
-              margin: EdgeInsets.only(
-                top: 64,
-                left: defaultMargin,
-                right: defaultMargin,
-              ),
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    'assets/logo_pu.png',
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                width: 216,
+                height: 216,
+                margin: EdgeInsets.only(
+                  top: 64,
+                  left: defaultMargin,
+                  right: defaultMargin,
+                ),
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/logo_pu.png'),
+                    fit: BoxFit.cover,
                   ),
-                  fit: BoxFit.cover,
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            Text(
-              "It's easier to enroll now.",
-              style: blackTextStyle.copyWith(
-                fontSize: 28,
-                fontWeight: medium,
+              const SizedBox(
+                height: 16,
               ),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Text(
-              'Please log in to continue',
-              style: blackTextStyle.copyWith(
-                fontSize: 20,
-                fontWeight: light,
+              Text(
+                "It's easier to enroll now.",
+                style: blackTextStyle.copyWith(
+                  fontSize: 28,
+                  fontWeight: medium,
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 28,
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                left: defaultMargin,
-                right: defaultMargin,
+              const SizedBox(
+                height: 8,
               ),
-              child: Column(
-                children: [
-                  emailInput(),
-                  const SizedBox(
-                    height: 28,
-                  ),
-                  passwordInput(),
-                ],
+              Text(
+                'Please log in to continue',
+                style: blackTextStyle.copyWith(
+                  fontSize: 20,
+                  fontWeight: light,
+                ),
               ),
-            ),
-            const Spacer(),
-            Container(
-              margin: EdgeInsets.only(
-                left: defaultMargin,
-                right: defaultMargin,
+              const SizedBox(
+                height: 28,
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  CustomizedButton(
-                    height: 60,
-                    onTap: () {
-                      submitButton();
-                      print("Button tapped!");
-                    },
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        'Not a member?',
-                        style: blackTextStyle.copyWith(
-                          fontSize: 20,
-                          fontWeight: light,
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/register-page');
-                        },
-                        child: Text(
-                          'Register now',
-                          style: purpleTextStyle.copyWith(
+              Container(
+                margin: EdgeInsets.only(
+                  left: defaultMargin,
+                  right: defaultMargin,
+                ),
+                child: Column(
+                  children: [
+                    emailInput(),
+                    const SizedBox(
+                      height: 28,
+                    ),
+                    passwordInput(),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              Container(
+                margin: EdgeInsets.only(
+                  left: defaultMargin,
+                  right: defaultMargin,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    CustomizedButton(
+                      height: 60,
+                      onTap: () {
+                        submitButton();
+                        print("Button tapped!");
+                      },
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'Not a member?',
+                          style: blackTextStyle.copyWith(
                             fontSize: 20,
                             fontWeight: light,
                           ),
                         ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 32,
-                  ),
-                ],
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/register-page');
+                          },
+                          child: Text(
+                            'Register now',
+                            style: purpleTextStyle.copyWith(
+                              fontSize: 20,
+                              fontWeight: light,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 32,
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

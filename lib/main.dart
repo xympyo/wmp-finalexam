@@ -1,3 +1,4 @@
+import 'package:final_exam_project/pages/enrolled_page.dart';
 import 'package:final_exam_project/pages/enrollment_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -8,7 +9,12 @@ import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  try {
+    await Firebase.initializeApp();
+    print("Firebase initialized successfully");
+  } catch (e) {
+    print("Error initializing Firebase: $e");
+  }
   runApp(const MyApp());
 }
 
@@ -24,6 +30,7 @@ class MyApp extends StatelessWidget {
         '/login-page': (context) => const LoginPage(),
         '/register-page': (context) => const RegisterPage(),
         '/enrollment-page': (context) => const EnrollmentPage(),
+        '/enrolled-page': (context) => const EnrolledPage(),
       },
     );
   }
